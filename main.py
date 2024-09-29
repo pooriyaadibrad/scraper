@@ -23,3 +23,14 @@ parameters = {
     'title': 'comedy'
 }
 response = requests.get(base_url, params=parameters, headers=headers)
+
+soup = BeautifulSoup(response.text, 'lxml')
+
+select_1 ='.ipc-metadata-list-summary-item'
+
+elements = soup.select(select_1)
+select_2 = '.ipc-title__text'
+
+for element in elements:
+    result = element.select(select_2)
+    print(result[0].text)
