@@ -18,3 +18,8 @@ headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0"
 }
 
+base_url = 'https://www.imdb.com/search/title/'
+parameters = {
+    'title': 'comedy'
+}
+response = requests.get(base_url, params=parameters, headers=headers)
